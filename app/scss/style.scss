@@ -184,13 +184,53 @@
 .benefits {
     &__items {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
+        padding-left: 25px;
     }
     &__item {
         display: flex;
         align-items: flex-end;
         margin-bottom: 100px;
+        &:nth-child(even) {
+            margin-left: 40px;
+            transform: translateY(25px);
+        }
+    }
+    &__item-1,
+    &__item-3 {
+        position: relative;
+        &::before,
+        &::after {
+            content:"";
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    }
+    &__item-1 {
+        &::before {
+            width: 245px;
+            height: 48px;
+            background-image: url("../images/line-1.svg");
+            right: -56px;
+            top: 31px;
+        }
+    }
+    &__item-3 {
+        &::before {
+            width: 254px;
+            height: 39px;
+            top:50px;
+            right:-55px;
+            background-image: url("../images/line-3.svg"); 
+        }
+        &::after {
+            width: 463px;
+            height: 62px;
+            top: -70px;
+            right: -54px;
+            background-image: url("../images/line-2.svg"); 
+        }
     }
     &__num {
         font-size: 36px;
